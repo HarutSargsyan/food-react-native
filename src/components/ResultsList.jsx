@@ -19,15 +19,13 @@ const ResultsList = ({ title, results, navigation }) => {
         showsHorizontalScrollIndicator={false}
         data={results}
         keyExtractor={(result) => result.id}
-        renderItem={({ item }) => {
-          return (
-            <TouchableOpacity
-              onPress={() => navigation.navigate("ResultShow", { id: item.id })}
-            >
-              <ResultsDetail result={item} />
-            </TouchableOpacity>
-          );
-        }}
+        renderItem={({ item }) => (
+          <TouchableOpacity
+            onPress={() => navigation.navigate("ResultShow", { id: item.id })}
+          >
+            <ResultsDetail result={item} />
+          </TouchableOpacity>
+        )}
       />
     </View>
   ) : null;
